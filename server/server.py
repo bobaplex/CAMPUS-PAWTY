@@ -75,7 +75,7 @@ def embb_hook():
 def root():
     if "user" not in session:
         return redirect("/login")
-    return "how did we get here"
+    return redirect('/Loading_Page.html}')
 
 # static file server (there's gotta be a better way to do this)
 @app.route('/<filename>')
@@ -85,8 +85,14 @@ def index(filename):
         return redirect("/login")
 
     try:
-        with open("../assets/"+filename, "rb") as f:
-            return f.read().replace("%%USERNAME%%", session["user"]["userinfo"]["name"])
+        try:
+            with open("../frontend/"+filename, "r") as f:
+                r = f.read()
+                r = r.replace("%%USERNAME%%", session["user"]["userinfo"]["name"])
+                return r
+        except:
+            with open("../frontend/"+filename, "rb") as f:
+                return f.read()
     except Exception as e:
         print(e)
         return "404 not found"
@@ -126,4 +132,4 @@ def logout():
 
 if __name__ == '__main__':  
      import os
-     os.system("flask --app server.py run --host 0.0.0.0 --port 8888 --cert adhoc")
+     os.system("flask --app server.py run --host 0.0.0.0 --port 8888")#--cert adhoc")
