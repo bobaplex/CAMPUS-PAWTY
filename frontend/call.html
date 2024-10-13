@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Pawty Video Call</title>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTC_N.js"></script>
+    <style>
+        body{
+            z-index: -3;
+            font-size: 40px;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        *{
+            font-size: 40px;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        #local-player, #remote-player {
+            width: 800px;
+            height: 600px;
+            background-color: black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Campus Pawty Video Call</h1>
+    <div>
+        <button onclick="joinCall()">Join Call</button>
+        <button onclick="leaveCall()">Leave Call</button>
+    </div>
+    <div id="local-player"></div>
+    <div id="remote-player"></div>
+    <script src="app.js"></script>
+</body>
+</html>

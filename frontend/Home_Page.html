@@ -1,0 +1,54 @@
+<script>window.location.href="map.html"</script>
+
+<div style="z-index: -2; width: 1080px; height: 2340px; position: relative; background: #FFFEE4">
+    
+    <div class="popup" id="popup-1"> 
+        <div class="overlay" style="position: absoulte; top:0px; left:0px; width: 100px; height:100px; background:rbga(0,0, 0, 0.7); z-index:1px"></div>
+        <div class="content position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; width: 450px; height: 220px; z-index:2; text-align:center; padding:20px; box-sizing:border-box">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
+            <h1>TEST</h1>
+        </div>
+    </div>
+
+    <button onclick="togglePopup()">Show popup</button>
+    <div id = "3800" class = building style="width: 251.63px; height: 77.78px; left: 774.28px; top: 1072.43px; position: absolute; transform: rotate(32.90deg); transform-origin: 0 0; background: rgba(217, 217, 217, 0.91)"><button onclick="myFunction()"> Click me</button></div>
+ 
+    <div id = "185" class = building style="width: 121.57px; height: 120.39px; left: 581px; top: 960px; position: absolute; transform: rotate(21.02deg); transform-origin: 0 0; background: #D9D9D9"></div>
+    <div id = "4001" class = building style="width: 133.01px; height: 312.83px; left: 704.67px; top: 298px; position: absolute; transform: rotate(9.15deg); transform-origin: 0 0; background: #D9D9D9"></div>
+    <div style="width: 859px; height: 105px; left: 38px; top: 43px; position: absolute; color: #341483; font-size: 96px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Map:</div>
+    <div style="width: 38px; height: 38px; left: 24px; top: 2275px; position: absolute; background: rgba(217, 217, 217, 0.04); border: 6px #341483 solid"></div>
+    <div style="width: 1080px; height: 388px; left: -3px; top: 1564px; position: absolute; background: rgba(151, 122, 234, 0.32)"></div>
+    <div style="width: 378px; height: 0px; left: 521px; top: 1952px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; border: 6px #341483 solid"></div>
+    <div style="width: 263px; height: 37px; left: 24px; top: 1574px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Sidewalk:</div>
+    <div style="width: 108px; height: 18px; left: 546px; top: 1574px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Home:</div>
+    <img style="width: 166; height: 188px; left: 938px; top: 0px; position: absolute" src="CampusPawtyLogo.png" />
+    <div style="width: 1083px; height: 388px; left: -3px; top: 1952px; position: absolute; background: rgba(151, 122, 234, 0.32)"></div>
+    <div style="width: 1070px; height: 0px; left: -4px; top: 1952px; position: absolute; border: 6px #341483 solid"></div>
+    <div style="width: 202px; height: 30px; left: 24px; top: 1976px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Change Status: </div>
+    <div style="width: 38px; height: 38px; left: 24px; top: 2196px; position: absolute; background: rgba(217, 217, 217, 0); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 6px #D41212 solid"></div>
+    <div style="width: 183px; height: 25px; left: 86px; top: 2203px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Busy</div>
+    <div style="width: 269px; height: 25px; left: 86px; top: 2284px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">My Toggle Location</div>
+    <div style="width: 38px; height: 38px; left: 24px; top: 2030px; position: absolute; background: rgba(217, 217, 217, 0); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 6px #42A736 solid"></div>
+    <div style="width: 183px; height: 25px; left: 86px; top: 2037px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Social</div>
+    <div style="width: 38px; height: 38px; left: 24px; top: 2111px; position: absolute; background: rgba(217, 217, 217, 0); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 6px #E67A05 solid"></div>
+    <div style="width: 183px; height: 25px; left: 86px; top: 2118px; position: absolute; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Studying</div>
+    <div style="width: 86px; height: 28px; left: 960px; top: 1394px; position: absolute; color: #341483; font-size: 15px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">zoom out</div>
+    <a href = "Info_Page.html">
+    <img style="width: 68px; height: 65px; left: 997px; top: 1965px; position: absolute" src="info_icon.png" />
+    </a>
+    <img style="width: 203px; height: 253px; left: 833px; top: 1981px; position: absolute" src="profile.png" />
+    <div style="width: 197px; height: 49px; left: 836px; top: 2226px; position: absolute; text-align: center; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Change Profile Picture</div>
+    <img style="width: 413px; height: 78px; left: 319px; top: 2146px; position: absolute" src="time_slider.png" />
+    <div style="width: 93px; height: 27px; left: 359px; top: 2109px; position: absolute; text-align: center; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">8am</div>
+    <div style="width: 93px; height: 27px; left: 582px; top: 2109px; position: absolute; text-align: center; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">8pm</div>
+    <div style="width: 313px; height: 34px; left: 364px; top: 2060px; position: absolute; text-align: center; color: #341483; font-size: 24px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Location On Between:</div>
+    <img style="width: 60.41px; height: 67.83px; left: 713px; top: 1379.78px; position: absolute; transform: rotate(-29.54deg); transform-origin: 0 0" src="hand_panning.png" />
+    <div style="width: 78px; height: 19px; left: 779px; top: 1394px; position: absolute; text-align: center; color: #341483; font-size: 15px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">pan</div>
+    <div style="width: 151px; height: 19px; left: 846px; top: 1443px; position: absolute; text-align: center; color: #341483; font-size: 15px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">Manage Friends</div>
+    <a href="Manage_Friends.html">
+        <img style="width: 57px; height: 38px; left: 799px; top: 1433px; position: absolute" src="list_icon.png"/>
+    </a>
+    <img style="width: 55px; height: 55px; left: 911px; top: 1376px; position: absolute" src="magnify_glass-removebg-preview.png" />
+    <img style="z-index: -1;width: 1102px; height: 1150px; left: -22px; top: 182px; position: absolute" src="scrolled_in_background.png" />
+  </div>
+

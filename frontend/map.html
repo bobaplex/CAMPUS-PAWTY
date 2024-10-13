@@ -1,0 +1,218 @@
+<html><head><style>
+
+body{
+	padding: 0;
+	margin: 0;
+	z-index: -3;
+	font-size: 40px;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+h3{
+	margin-top: 0.5rem;
+}
+
+#uicontainer{
+	width: 1080px;
+	height: 2340px;
+	background-color: #FFFEE4;
+	display: flex;
+	flex-direction: column;
+	margins: 0;
+	padding: 0;
+	z-index: -2;
+	overflow: hidden;
+}
+
+#map-container{
+	flex-grow: 1;
+	margin: 0;
+}
+
+#map{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+}
+
+#map > * {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+#map div{
+	z-index: 1;
+}
+
+#bottom-panel{
+	height: 1000px;
+	background-color: #ffbff6;
+	margin: 0;
+	border-radius: 50px 50px 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.building{
+	position: relative;
+	transform: translate(0, -30px);
+}
+
+#extras{
+	flex-grow: 1;
+	display: flex;
+}
+
+#extras > div{
+	margin: 25px;
+	padding: 25px;
+	border: 10px solid #34148340;
+	border-radius: 20px;
+}
+
+#sidewalk-container{
+	flex-grow: 1;
+}
+
+#home-container{
+	flex-grow: 1;
+}
+
+#options{
+	flex-grow: 0.1;
+	display: flex;
+}
+
+#options #status{
+	flex-grow: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 50px;
+	font-size: 60px;
+	padding-bottom: 20px;
+}
+
+#options #status input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 70px;
+    height: 70px;
+    border: 7px solid #34148380;
+    border-radius: 50%;
+    margin-right: 20px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Style the selected radio button */
+#options #status input[type="radio"]:checked::before {
+    content: "";
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #34148380;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+}
+
+#options #status label{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	flex-grow: 1;
+	color: #341483;
+	padding: 10px;
+}
+
+#options #buttons{
+	flex-grow: 0.25;
+	display: flex;
+	flex-direction: column;
+}
+
+#options #buttons > *{
+	width: 200px;
+}
+
+#options #buttons button{
+	height: 200px;
+	background-color: 341483;
+	color: #fff;
+	border: none;
+	border-radius: 35px;
+	font-size: 30px;
+}
+
+span.user, span.user img{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #ffbff6;
+}
+
+span.user img{
+	width: 60px;
+	height: 60px;
+	transform: translate(10px, 10px);
+}
+
+</style></head><body>
+
+<div id="uicontainer">
+
+<section id=map-container>
+<div id=map>
+	<img src=map.png>
+	<div id=map-overlay>
+		<div class=building style="left:737;top:884;" id=b185></div>
+		<div class=building style="left:968;top:1012;" id=b3800></div>
+		<div class=building style="left:862;top:303;" id=b4001></div>
+	</div>
+</div>
+</section>
+
+<section id=bottom-panel>
+	<div id=extras>
+		<div id=sidewalk-container>
+			<h3> Sidewalk </h3>
+			<div id=sidewalk></div>
+		</div>
+		<div id=home-container>
+			<h3> Home </h3>
+			<div id=home></div>
+		</div>
+	</div>
+	<div id=options>
+		<div id=status>
+			<label>
+           		<input type="radio" name="option" value="social">
+            	Social
+	        </label>
+	        <label>
+	            <input type="radio" name="option" value="studying">
+	            Studying
+	        </label>
+	        <label>
+	            <input type="radio" name="option" value="busy">
+	            Busy
+	        </label>
+		</div>
+		<div id=buttons>
+			<button onclick="togglelocation()">Location</button>
+			<a href="Manage_Friends.html"><img src=profile.png></a>
+		</div>
+	</div>
+</section>
+
+</div>
+
+<script src="client.js"></script>
+
+</body></html>
