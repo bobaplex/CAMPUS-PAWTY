@@ -1,4 +1,4 @@
-# defines the network-slice api helpers
+# defines the nokia network-slice api helpers
 
 import network_as_code as nac
 
