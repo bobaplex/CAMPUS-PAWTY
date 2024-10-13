@@ -37,8 +37,7 @@ def fetchstate():
     def invert_dict(original_dict):
         inverted_dict = defaultdict(list)
         for key, value in original_dict.items():
-            value = value[0]
-            inverted_dict[value].append(key)
+            inverted_dict[value[0]].append([key, value[0]])
         return dict(inverted_dict)
 
     return jsonify(invert_dict(state))
@@ -87,7 +86,7 @@ def index(filename):
 
     try:
         with open("../assets/"+filename, "rb") as f:
-            return f.read()
+            return f.read().replace("%%USERNAME%%", session["user"]["userinfo"]["name"])
     except Exception as e:
         print(e)
         return "404 not found"
