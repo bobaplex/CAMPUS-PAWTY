@@ -1,6 +1,6 @@
 
 from authlib.integrations.flask_client import OAuth
-from flask import Flask, jsonify, request, session, url_for, redirect
+from flask import Flask, jsonify, request, session, redirect
 from urllib.parse import quote_plus, urlencode
 
 from collections import defaultdict
@@ -9,7 +9,7 @@ from collections import defaultdict
 AUTH0_CLIENTID="4yDcL1LUGClyovqvwwlXsgq5AIuru0eE"
 AUTH0_CLIENTSEC="WSJFiGsqktQ5y19bOC2sR_arUq9zw_4iSHYZpv539KuIDCVE8C7tbsQB4F50ElCq" # this is *really* bad opsec but its 1am
 AUTH0_DOMAIN="dev-bvbzz75dggv2auge.us.auth0.com"
-THIS="https://us.openport.io:14983/"
+THIS="https://pawty.serveo.net/"
 
 app = Flask(__name__)
 app.secret_key = "WSJFiGsqktQ5y19bOC2sR_arUq9zw_4iSHYZpv539KuIDCVE8C7tbsQB4F50ElCq"
@@ -46,9 +46,9 @@ def fetchstate():
 # user updates their state
 @app.route('/api/log', methods=["POST"])
 def log():
-    print(session)
     uid = session["user"]["userinfo"]["name"]
     state[uid] = request.get_json()
+    print(uid, "just logged", state[uid])
     return "200 OK"
 
 # embb stuff (nokia please fix your api)
@@ -105,12 +105,12 @@ def index(filename):
 def callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
-    return redirect("/dummy.html")
+    return redirect("/Loading_Page.html")
 
 @app.route("/login")
 def login():
     return oauth.auth0.authorize_redirect(
-        redirect_uri=url_for("callback", _external=True)
+        redirect_uri=THIS+"callback"
     )
 
 @app.route("/logout")
@@ -123,7 +123,7 @@ def logout():
         + "/v2/logout?"
         + urlencode(
             {
-                "returnTo": THIS+"dummy.html",
+                "returnTo": THIS+"Loading_Page.html",
                 "client_id": AUTH0_CLIENTID,
             },
             quote_via=quote_plus,
