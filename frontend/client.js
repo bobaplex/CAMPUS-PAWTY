@@ -25,7 +25,6 @@ function setSharing(yesno){
 	}
 }
 
-// IMPLEMENT THIS
 function UpdateUI(){
 	
 	let state = window.state
@@ -92,7 +91,6 @@ function getLocationFromCoords(coords){
 		`https://nominatim.openstreetmap.org/reverse?lat=${coords.latitude}&lon=${coords.longitude}&format=json`
 	).then(res => res.json())
      .then(res => {
-     	console.debug(res)
      	
      	// import places.js please
      	let place = res.address.house_number;
@@ -101,6 +99,7 @@ function getLocationFromCoords(coords){
      		place = "SIDEWALK"
      	}
      	
+     	console.log(`[DEBUG] ${JSON.stringify(res.address)}`)
      	window.place = place
 	})
 }
